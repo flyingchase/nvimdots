@@ -47,13 +47,13 @@ local disable_distribution_plugins = function()
 end
 
 local leader_map = function()
-	vim.g.mapleader = ","
+	vim.g.mapleader = ";"
 	vim.api.nvim_set_keymap("n", " ", "", { noremap = true })
 	vim.api.nvim_set_keymap("x", " ", "", { noremap = true })
 end
 
 local neovide_config = function()
-	vim.cmd([[set guifont=JetBrainsMono\ Nerd\ Font:h15]])
+	vim.cmd([[set guifont=FiraCode:h16]])
 	vim.g.neovide_refresh_rate = 120
 	vim.g.neovide_cursor_vfx_mode = "railgun"
 	vim.g.neovide_no_idle = true
@@ -108,7 +108,8 @@ local load_core = function()
 	pack.load_compile()
 
 	-- vim.cmd([[set background=light]])
-	vim.cmd([[colorscheme catppuccin]])
+	-- vim.cmd([[colorscheme catppuccin]])
+	vim.cmd([[colorscheme everforest]])
 end
 
 load_core()

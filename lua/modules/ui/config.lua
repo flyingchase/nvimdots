@@ -286,7 +286,8 @@ function config.lualine()
 	require("lualine").setup({
 		options = {
 			icons_enabled = true,
-			theme = "catppuccin",
+			-- theme = "catppuccin",
+			theme = "everforest",
 			disabled_filetypes = {},
 			component_separators = "|",
 			section_separators = { left = "", right = "" },
@@ -626,6 +627,27 @@ end
 
 function config.fidget()
 	require("fidget").setup({})
+end
+
+function config.everforest()
+	vim.cmd([[set background=light]])
+	-- 在 dark 和 light 之上可选 soft medium hard
+	vim.g.everforest_background = "medium"
+	-- vim.g.everforest_disable_italic_comment = 1
+	-- 主题透明设置 透明则为 1
+	-- vim.g.everforest_transparent_background = 1
+	vim.g.everforest_better_performance = 1
+	-- 当前光标所在文字的高亮 bold underline italic
+	-- vim.g.everforest_current_word = 'bold'
+	-- 高亮错误
+	vim.g.everforest_diagnostic_text_highlight = 1
+	-- vim.g.everforest_lightline_disable_bold = 1
+	-- vim.g.everforest_diagnostic_line_highlight = 1
+	-- 可选  colored grey(defaults)
+	vim.g.everforest_diagnostic_virtual_text = "colored"
+	-- 对比度 默认 low 可选 high
+	vim.g.everforest_ui_contrast = "low"
+	vim.g.everforest_show_eob = 1
 end
 
 return config

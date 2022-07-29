@@ -65,5 +65,9 @@ ui["j-hui/fidget.nvim"] = {
 	event = "BufReadPost",
 	config = conf.fidget,
 }
-
+ui["sainnhe/everforest"] = {
+	opt = false,
+	as = "everforest",
+	config = conf.everforest,
+}
 return ui

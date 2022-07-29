@@ -21,8 +21,8 @@ local def_map = {
 	["n|<C-k>"] = map_cmd("<C-w>k"):with_noremap(),
 	["n|<A-[>"] = map_cr("vertical resize -5"):with_silent(),
 	["n|<A-]>"] = map_cr("vertical resize +5"):with_silent(),
-	["n|<A-;>"] = map_cr("resize -2"):with_silent(),
-	["n|<A-'>"] = map_cr("resize +2"):with_silent(),
+	["n|<A-,>"] = map_cr("resize -2"):with_silent(),
+	["n|<A-.>"] = map_cr("resize +2"):with_silent(),
 	["n|<C-q>"] = map_cmd(":wq<CR>"),
 	["n|<A-q>"] = map_cmd(":Bwipeout<CR>"),
 	["n|<A-S-q>"] = map_cmd(":q!<CR>"),
@@ -47,6 +47,17 @@ local def_map = {
 	["v|K"] = map_cmd(":m '<-2<cr>gv=gv"),
 	["v|<"] = map_cmd("<gv"),
 	["v|>"] = map_cmd(">gv"),
+	-- others new add
+	["n|gor"] = map_cmd(":GoRun<CR>"),
+	["n|got"] = map_cmd(":GoTestFunc<CR>"),
+	["n|L"] = map_cmd("g_"),
+	["v|L"] = map_cmd("g_"),
+	["n|H"] = map_cmd("^"),
+	["v|H"] = map_cmd("^"),
+	["i|<enter>"] = map_cmd("s<C-R>=v:lua.enter_key()<CR>!"):with_noremap():with_silent(),
+	["i|<C-i>"] = map_cmd("<Esc>zzi<CR>"),
+	["n|<leader>i"] = map_cmd("<C-]>"),
+	["n|<leader>o"] = map_cmd("<C-t>"),
 }
 
 bind.nvim_load_mapping(def_map)
