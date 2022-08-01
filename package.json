@@ -1,0 +1,12 @@
+{
+  "name": "nvim",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/flyingchase/nvimdots",
+  "author": "wlzhou <zhongbingwang@yeah.net>",
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^8.21.0",
+    "yarn": "^1.22.19"
+  }
+}
