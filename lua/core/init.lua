@@ -108,8 +108,8 @@ local load_core = function()
 	pack.load_compile()
 
 	-- vim.cmd([[set background=light]])
-	-- vim.cmd([[colorscheme catppuccin]])
-	vim.cmd([[colorscheme everforest]])
+	vim.cmd([[colorscheme catppuccin]])
+	-- vim.cmd([[colorscheme everforest]])
 end
 
 load_core()
