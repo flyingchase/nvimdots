@@ -53,7 +53,7 @@ local leader_map = function()
 end
 
 local neovide_config = function()
-	vim.cmd([[set guifont=FiraCode:h16]])
+	vim.cmd([[set guifont=FiraCode\ Nerd\ Font:h17]])
 	vim.g.neovide_refresh_rate = 120
 	vim.g.neovide_cursor_vfx_mode = "railgun"
 	vim.g.neovide_no_idle = true
@@ -107,7 +107,7 @@ local load_core = function()
 	require("core.event")
 	pack.load_compile()
 
-	-- vim.cmd([[set background=light]])
+	vim.cmd([[set background=light]])
 	vim.cmd([[colorscheme catppuccin]])
 	-- vim.cmd([[colorscheme everforest]])
 end

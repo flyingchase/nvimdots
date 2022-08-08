@@ -286,8 +286,8 @@ function config.lualine()
 	require("lualine").setup({
 		options = {
 			icons_enabled = true,
-			-- theme = "catppuccin",
-			theme = "everforest",
+			theme = "catppuccin",
+			-- theme = "everforest",
 			disabled_filetypes = {},
 			component_separators = "|",
 			section_separators = { left = "", right = "" },
