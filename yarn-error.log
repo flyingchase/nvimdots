@@ -1,8 +1,8 @@
 Arguments: 
-  /Users/qlzhou/.nvm/versions/node/v18.1.0/bin/node /usr/local/Cellar/yarn/1.22.19/libexec/bin/yarn.js add efm
+  /Users/qlzhou/.nvm/versions/node/v18.1.0/bin/node /usr/local/Cellar/yarn/1.22.19/libexec/bin/yarn.js add efml
 
 PATH: 
-  /Users/qlzhou/.autojump/bin:/Users/qlzhou/.pyenv/shims:/Users/qlzhou/.pyenv/bin:/System/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/sbin:/usr/local/opt/go@1.18/bin:/Users/qlzhou/.nvm/versions/node/v18.1.0/bin:/Users/qlzhou/.cargo/bin:/opt/homebrew/bin:/usr/local/opt/ruby/bin:/Users/qlzhou/.npm-packages/bin:/Users/qlzhou/tools/lua-language-server/bin/macOS:/Users/qlzhou/.local/bin:/Users/qlzhou/.jenv/shims:/usr/local/opt/openssl@3/bin:/usr/local/opt/llvm/bin:/Users/qlzhou/.autojump/bin:/Users/qlzhou/.pyenv/bin:/System/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/sbin:/usr/local/opt/go@1.18/bin:/Users/qlzhou/.nvm/versions/node/v18.1.0/bin:/Users/qlzhou/.cargo/bin:/opt/homebrew/bin:/usr/local/opt/ruby/bin:/Users/qlzhou/.npm-packages/bin:/Users/qlzhou/tools/lua-language-server/bin/macOS:/Users/qlzhou/.local/bin:/Users/qlzhou/.jenv/shims:/usr/local/opt/openssl@3/bin:/usr/local/opt/llvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/Library/Apple/usr/bin:/Users/qlzhou/.autojump/bin:/usr/local/sbin:/Users/qlzhou/.pyenv/bin:/System/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/opt/go@1.18/bin:/Users/qlzhou/.nvm/versions/node/v18.1.0/bin:/Users/qlzhou/.cargo/bin:/opt/homebrew/bin:/usr/local/opt/ruby/bin:/Users/qlzhou/.npm-packages/bin:/Users/qlzhou/tools/lua-language-server/bin/macOS:/Users/qlzhou/.local/bin:/Users/qlzhou/.jenv/shims:/usr/local/opt/openssl@3/bin:/usr/local/opt/llvm/bin:/Users/qlzhou/.zi/polaris/bin:/Applications/kitty.app/Contents/MacOS:/usr/local/Cellar/go/1.18.4/libexec/bin:/Users/qlzhou/go/bin:/Users/qlzhou/go/bin:/Users/qlzhou/.cargo/bin:/usr/local/Cellar/go/1.18.4/libexec/bin:/Users/qlzhou/go/bin:/Users/qlzhou/go/bin:/Users/qlzhou/.cargo/bin:/usr/local/Cellar/go/1.18.4/libexec/bin:/Users/qlzhou/go/bin
+  /Users/qlzhou/.autojump/bin:/Users/qlzhou/.pyenv/shims:/Users/qlzhou/.pyenv/bin:/System/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/sbin:/usr/local/opt/go@1.18/bin:/Users/qlzhou/.nvm/versions/node/v18.1.0/bin:/Users/qlzhou/.cargo/bin:/opt/homebrew/bin:/usr/local/opt/ruby/bin:/Users/qlzhou/.npm-packages/bin:/Users/qlzhou/tools/lua-language-server/bin/macOS:/Users/qlzhou/.local/bin:/Users/qlzhou/.jenv/shims:/usr/local/opt/openssl@3/bin:/usr/local/opt/llvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/Library/Apple/usr/bin:/Users/qlzhou/.autojump/bin:/usr/local/sbin:/Users/qlzhou/.pyenv/bin:/System/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/opt/go@1.18/bin:/Users/qlzhou/.nvm/versions/node/v18.1.0/bin:/Users/qlzhou/.cargo/bin:/opt/homebrew/bin:/usr/local/opt/ruby/bin:/Users/qlzhou/.npm-packages/bin:/Users/qlzhou/tools/lua-language-server/bin/macOS:/Users/qlzhou/.local/bin:/Users/qlzhou/.jenv/shims:/usr/local/opt/openssl@3/bin:/usr/local/opt/llvm/bin:/Users/qlzhou/.zi/polaris/bin:/Applications/kitty.app/Contents/MacOS:/usr/local/Cellar/go/1.18.4/libexec/bin:/Users/qlzhou/go/bin:/Users/qlzhou/go/bin:/Users/qlzhou/.cargo/bin:/usr/local/Cellar/go/1.18.4/libexec/bin:/Users/qlzhou/go/bin
 
 Yarn version: 
   1.22.19
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.npmjs.org/efm: Not found
+  Error: https://registry.npmjs.org/efml: Not found
       at params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:66145:18)
       at self.callback (/usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:140890:22)
       at Request.emit (node:events:527:28)
