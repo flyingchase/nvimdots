@@ -859,7 +859,7 @@ function config.everforest()
 	-- vim.g.everforest_transparent_background = 1
 	vim.g.everforest_better_performance = 1
 	-- 当前光标所在文字的高亮 bold underline italic
-	vim.g.everforest_current_word = "bold"
+	vim.g.everforest_current_word = "italic"
 	-- 高亮错误
 	vim.g.everforest_diagnostic_text_highlight = 1
 	-- vim.g.everforest_lightline_disable_bold = 1
