@@ -314,6 +314,15 @@ function config.catppuccin()
 				LspDiagnosticsVirtualTextHint = { fg = cp.rosewater },
 				LspDiagnosticsUnderlineHint = { sp = cp.rosewater },
 
+				-- For Ts-Rainbow
+				rainbowcol1 = { bg = cp.none },
+				rainbowcol2 = { bg = cp.none },
+				rainbowcol3 = { bg = cp.none },
+				rainbowcol4 = { bg = cp.none },
+				rainbowcol5 = { bg = cp.none },
+				rainbowcol6 = { bg = cp.none },
+				rainbowcol7 = { bg = cp.none },
+
 				-- For treesitter.
 				TSField = { fg = cp.rosewater },
 				TSProperty = { fg = cp.yellow },
@@ -859,7 +868,7 @@ function config.everforest()
 	-- vim.g.everforest_transparent_background = 1
 	vim.g.everforest_better_performance = 1
 	-- 当前光标所在文字的高亮 bold underline italic
-	vim.g.everforest_current_word = "italic"
+	vim.g.everforest_current_word = "bold"
 	-- 高亮错误
 	vim.g.everforest_diagnostic_text_highlight = 1
 	-- vim.g.everforest_lightline_disable_bold = 1
