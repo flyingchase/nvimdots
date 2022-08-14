@@ -253,15 +253,17 @@ function config.catppuccin()
 			cmp = true,
 			dap = { enabled = true, enable_ui = true },
 			notify = true,
-			symbols_outline = true,
+			symbols_outline = false,
 			coc_nvim = false,
 			leap = false,
 			neotree = { enabled = false, show_root = true, transparent_panel = false },
-			telekasten = true,
+			telekasten = false,
 			mini = false,
-			aerial = false,
+			aerial = true,
 			vimwiki = true,
 			beacon = false,
+			navic = false,
+			overseer = false,
 		},
 		color_overrides = {
 			mocha = {
@@ -463,9 +465,9 @@ function config.lualine()
 		lualine_y = {},
 		lualine_z = { "location" },
 	}
-	local aerial = {
+	local outline = {
 		sections = mini_sections,
-		filetypes = { "aerial" },
+		filetypes = { "lspsagaoutline" },
 	}
 	local dapui_scopes = {
 		sections = simple_sections,
@@ -565,7 +567,7 @@ function config.lualine()
 			"nvim-tree",
 			"toggleterm",
 			"fugitive",
-			aerial,
+			outline,
 			dapui_scopes,
 			dapui_breakpoints,
 			dapui_stacks,
