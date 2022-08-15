@@ -6,6 +6,7 @@
   "author": "wlzhou <zhongbingwang@yeah.net>",
   "license": "MIT",
   "dependencies": {
+    "black": "^0.3.0",
     "eslint": "^8.21.0",
     "yarn": "^1.22.19"
   }
