@@ -25,7 +25,11 @@ function config.nvim_treesitter()
 			"vue",
 			"css",
 		},
-		highlight = { enable = true, disable = { "vim" } },
+		highlight = {
+			enable = true,
+			disable = { "vim" },
+			additional_vim_regex_highlighting = false,
+		},
 		textobjects = {
 			select = {
 				enable = true,
@@ -106,10 +110,6 @@ end
 
 function config.hop()
 	require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
-end
-
-function config.matchup()
-	vim.cmd([[let g:matchup_matchparen_offscreen = {'method': 'popup'}]])
 end
 
 function config.autotag()
@@ -199,8 +199,10 @@ function config.toggleterm()
 end
 
 function config.dapui()
+	local icon = require("modules.ui.icons")
+
 	require("dapui").setup({
-		icons = { expanded = "▾", collapsed = "▸" },
+		icons = { expanded = icon.ui.ArrowOpen, collapsed = icon.ui.ArrowClosed, current_frame = icon.ui.Indicator },
 		mappings = {
 			-- Use a table to apply multiple mappings
 			expand = { "<CR>", "<2-LeftMouse>" },
@@ -226,6 +228,22 @@ function config.dapui()
 			},
 			{ elements = { "repl" }, size = 10, position = "bottom" },
 		},
+		-- Requires Nvim version >= 0.8
+		controls = {
+			enabled = true,
+			-- Display controls in this session
+			element = "repl",
+			icons = {
+				pause = icon.dap.Pause,
+				play = icon.dap.Play,
+				step_into = icon.dap.StepInto,
+				step_over = icon.dap.StepOver,
+				step_out = icon.dap.StepOut,
+				step_back = icon.dap.StepBack,
+				run_last = icon.dap.RunLast,
+				terminate = icon.dap.Terminate,
+			},
+		},
 		floating = {
 			max_height = nil,
 			max_width = nil,
@@ -236,7 +254,9 @@ function config.dapui()
 end
 
 function config.dap()
-	vim.cmd([[packadd nvim-dap-ui]])
+	local icon = require("modules.ui.icons")
+
+	vim.api.nvim_command([[packadd nvim-dap-ui]])
 	local dap = require("dap")
 	local dapui = require("dapui")
 
@@ -253,11 +273,20 @@ function config.dap()
 	-- We need to override nvim-dap's default highlight groups, AFTER requiring nvim-dap for catppuccin.
 	vim.api.nvim_set_hl(0, "DapStopped", { fg = "#ABE9B3" })
 
-	vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpoint", linehl = "", numhl = "" })
-	vim.fn.sign_define("DapBreakpointCondition", { text = "ﳁ", texthl = "DapBreakpoint", linehl = "", numhl = "" })
-	vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "DapBreakpoint", linehl = "", numhl = "" })
-	vim.fn.sign_define("DapLogPoint", { text = "", texthl = "DapLogPoint", linehl = "", numhl = "" })
-	vim.fn.sign_define("DapStopped", { text = "", texthl = "DapStopped", linehl = "", numhl = "" })
+	vim.fn.sign_define(
+		"DapBreakpoint",
+		{ text = icon.dap.Breakpoint, texthl = "DiagnosticSignError", linehl = "", numhl = "" }
+	)
+	vim.fn.sign_define(
+		"DapBreakpointCondition",
+		{ text = icon.dap.BreakpointCondition, texthl = "DapBreakpoint", linehl = "", numhl = "" }
+	)
+	vim.fn.sign_define("DapStopped", { text = icon.dap.Stopped, texthl = "DapStopped", linehl = "", numhl = "" })
+	vim.fn.sign_define(
+		"DapBreakpointRejected",
+		{ text = icon.dap.BreakpointRejected, texthl = "DapBreakpoint", linehl = "", numhl = "" }
+	)
+	vim.fn.sign_define("DapLogPoint", { text = icon.dap.LogPoint, texthl = "DapLogPoint", linehl = "", numhl = "" })
 
 	dap.adapters.lldb = {
 		type = "executable",
@@ -419,17 +448,18 @@ end
 function config.imselect()
 	-- fcitx5 need a manual config
 	if vim.fn.executable("fcitx5-remote") == 1 then
-		vim.cmd([[
-		let g:im_select_get_im_cmd = ["fcitx5-remote"]
-		let g:im_select_default = '1'
-		let g:ImSelectSetImCmd = {
+		vim.api.nvim_cmd({
+			[[ let g:im_select_get_im_cmd = ["fcitx5-remote"] ]],
+			[[ let g:im_select_default = '1' ]],
+			[[ let g:ImSelectSetImCmd = {
 			\ key ->
 			\ key == 1 ? ['fcitx5-remote', '-c'] :
 			\ key == 2 ? ['fcitx5-remote', '-o'] :
 			\ key == 0 ? ['fcitx5-remote', '-c'] :
 			\ execute("throw 'invalid im key'")
 			\ }
-			]])
+			]],
+		}, { true, true, true })
 	end
 end
 

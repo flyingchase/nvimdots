@@ -3,7 +3,6 @@ local global = require("core.global")
 local function load_options()
 	local global_local = {
 		termguicolors = true,
-		mouse = "a",
 		errorbells = true,
 		visualbell = true,
 		hidden = true,
@@ -58,6 +57,7 @@ local function load_options()
 		shortmess = "aoOTIcF",
 		scrolloff = 2,
 		sidescrolloff = 5,
+		mousescroll = "ver:3,hor:6",
 		foldlevelstart = 99,
 		ruler = true,
 		cursorline = true,
@@ -70,7 +70,7 @@ local function load_options()
 		helpheight = 12,
 		previewheight = 12,
 		showcmd = false,
-		cmdheight = 2,
+		cmdheight = 2, -- 0, 1, 2
 		cmdwinheight = 5,
 		equalalways = false,
 		laststatus = 2,
@@ -100,14 +100,13 @@ local function load_options()
 		conceallevel = 0,
 		concealcursor = "niv",
 	}
+	local function isempty(s)
+		return s == nil or s == ""
+	end
 
-	if global.is_mac then
-		vim.g.clipboard = {
-			name = "macOS-clipboard",
-			copy = { ["+"] = "pbcopy", ["*"] = "pbcopy" },
-			paste = { ["+"] = "pbpaste", ["*"] = "pbpaste" },
-			cache_enabled = 0,
-		}
+	if not isempty(vim.env.CONDA_PREFIX) then
+		vim.g.python3_host_prog = vim.env.CONDA_PREFIX .. "/bin/python"
+	elseif global.is_mac then
 		vim.g.python_host_prog = "/usr/bin/python"
 		-- vim.g.python3_host_prog = "/usr/local/bin/python3"
 		vim.g.python3_host_prog = "/Users/qlzhou/.pyenv/shims/python3"
@@ -118,6 +117,7 @@ local function load_options()
 		vim.g.python_host_prog = "/usr/bin/python"
 		vim.g.python3_host_prog = "/usr/bin/python3"
 	end
+
 	for name, value in pairs(global_local) do
 		vim.o[name] = value
 	end
